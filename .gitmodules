@@ -1,0 +1,3 @@
+[submodule "CirketEditor/Vendor/NodeEditor"]
+	path = CirketEditor/Vendor/NodeEditor
+	url = https://github.com/paceholder/nodeeditor
