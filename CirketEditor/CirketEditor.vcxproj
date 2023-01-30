@@ -55,9 +55,23 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <LibraryPath>$(SolutionDir)CirketEditor\Vendor\NodeEditor\examples\connection_colors;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <LibraryPath>$(SolutionDir)CirketEditor\Vendor\NodeEditor\examples\connection_colors;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)CirketEditor\Vendor\NodeEditor\include;$(SolutionDir)CirketEditor\Vendor\NodeEditor\src;$(SolutionDir)CirketEditor\Vendor\NodeEditor\include\QtNodes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NODE_EDITOR_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)CirketEditor\Vendor\NodeEditor\include;$(SolutionDir)CirketEditor\Vendor\NodeEditor\src;$(SolutionDir)CirketEditor\Vendor\NodeEditor\include\QtNodes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NODE_EDITOR_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -86,8 +100,17 @@
     <QtRcc Include="Source\CirketEditor.qrc" />
     <QtUic Include="Source\CirketEditor.ui" />
     <QtMoc Include="Source\CirketEditor.h" />
+    <ClCompile Include="Source\models.cpp" />
+    <ClCompile Include="Source\NodeEditor.cpp" />
     <ClCompile Include="Source\CirketEditor.cpp" />
     <ClCompile Include="Source\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Source\models.hpp" />
+    <ClInclude Include="Source\NodeEditor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Vendor\NodeEditor\build\QtNodes.vcxproj">
