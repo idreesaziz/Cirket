@@ -9,6 +9,7 @@ class CirketEditor : public QMainWindow
 
 public:
     CirketEditor(QWidget *parent = nullptr);
+    void SetupUI();
     ~CirketEditor();
 
 private:
