@@ -7,12 +7,13 @@
 #include <QtNodes/NodeData>
 #include <QtNodes/NodeDelegateModelRegistry>
 #include "models.hpp"
+#include "Hadamard.h"
 
 static std::shared_ptr<QtNodes::NodeDelegateModelRegistry> registerDataModels()
 {
     auto ret = std::make_shared<QtNodes::NodeDelegateModelRegistry>();
 
-    ret->registerModel<NaiveDataModel>();
+    ret->registerModel<Hadamard>();
 
     /*
      We could have more models registered.

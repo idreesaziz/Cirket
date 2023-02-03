@@ -14,7 +14,7 @@ using QtNodes::PortIndex;
 using QtNodes::PortType;
 
 /// The class can potentially incapsulate any user data which
-/// need to be transferred within the Node Editor graph
+/// needs to be transferred within the Node Editor graph
 class MyNodeData : public NodeData
 {
 public:

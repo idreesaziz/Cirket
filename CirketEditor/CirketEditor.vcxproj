@@ -107,6 +107,9 @@
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="Source\Hadamard.h" />
+    <ClInclude Include="Source\Pin.h" />
+    <QtMoc Include="Source\NodeModel.h" />
     <QtMoc Include="Source\models.hpp" />
     <ClInclude Include="Source\NodeEditor.h" />
   </ItemGroup>
