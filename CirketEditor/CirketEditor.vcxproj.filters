@@ -54,9 +54,6 @@
     <ClInclude Include="Source\NodeEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Pin.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -67,10 +64,10 @@
     <QtMoc Include="Source\models.hpp">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="Source\NodeModel.h">
+    <QtMoc Include="Source\Hadamard.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="Source\Hadamard.h">
+    <QtMoc Include="Source\Execution.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
