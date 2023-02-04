@@ -9,6 +9,7 @@
 #include "models.hpp"
 #include "Hadamard.h"
 #include "Execution.h"
+#include "QubitNode.h"
 
 static std::shared_ptr<QtNodes::NodeDelegateModelRegistry> registerDataModels()
 {
@@ -16,6 +17,7 @@ static std::shared_ptr<QtNodes::NodeDelegateModelRegistry> registerDataModels()
 
     ret->registerModel<BeginExecutionNode>();
     ret->registerModel<HadamardNode>();
+    ret->registerModel<QubitNode>();
     ret->registerModel<EndExecutionNode>();
 
     return ret;

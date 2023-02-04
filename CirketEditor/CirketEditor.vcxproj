@@ -107,6 +107,7 @@
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="Source\QuBitNode.h" />
     <QtMoc Include="Source\Hadamard.h" />
     <QtMoc Include="Source\Execution.h" />
     <QtMoc Include="Source\models.hpp" />
