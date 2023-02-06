@@ -73,6 +73,9 @@
     <QtMoc Include="Source\QuBitNode.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Source\Node.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <Image Include="UI\rc\arrow_down.png">

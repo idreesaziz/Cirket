@@ -15,10 +15,10 @@ static std::shared_ptr<QtNodes::NodeDelegateModelRegistry> registerDataModels()
 {
     auto ret = std::make_shared<QtNodes::NodeDelegateModelRegistry>();
 
-    ret->registerModel<BeginExecutionNode>();
+    ret->registerModel<BeginExecNode>();
     ret->registerModel<HadamardNode>();
     ret->registerModel<QubitNode>();
-    ret->registerModel<EndExecutionNode>();
+    ret->registerModel<EndExecNode>();
 
     return ret;
 }

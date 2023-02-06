@@ -111,6 +111,7 @@
     <QtMoc Include="Source\Hadamard.h" />
     <QtMoc Include="Source\Execution.h" />
     <QtMoc Include="Source\models.hpp" />
+    <QtMoc Include="Source\Node.h" />
     <ClInclude Include="Source\NodeEditor.h" />
   </ItemGroup>
   <ItemGroup>

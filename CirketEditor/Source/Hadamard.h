@@ -1,76 +1,19 @@
 #pragma once
-
-#include <QtCore/QObject>
-
-#include <QtNodes/NodeData>
-#include <QtNodes/NodeDelegateModel>
-
-#include <memory>
+#include "Node.h"
+#include "QuBitNode.h"
 #include "Execution.h"
-#include "qubitnode.h"
-/// The class can potentially incapsulate any user data which
-/// needs to be transferred within the Node Editor graph
 
-
-//------------------------------------------------------------------------------
-
-/// The model dictates the number of inputs and outputs for the Node.
-/// In this example it has no logic.
-class HadamardNode : public QtNodes::NodeDelegateModel
+class HadamardNode : public Node
 {
     Q_OBJECT
 
 public:
-    virtual ~HadamardNode() {}
 
-public:
-    QString caption() const override { return QString("Hadamard"); }
-
-    QString name() const override { return QString("Hadamard Gate"); }
-
-public:
-    unsigned int nPorts(QtNodes::PortType const portType) const override
+    HadamardNode()
     {
-        return 2;
+        setCaption("Hadamard");
+        setName("Hadamard Gate");
+        setInputParams<ExecPin, QubitPin>();
+        setOutputParams<ExecPin, QubitPin>();
     }
-
-    QtNodes::NodeDataType dataType(QtNodes::PortType const portType, QtNodes::PortIndex const portIndex) const override
-    {
-        switch (portType) {
-        case QtNodes::PortType::In:
-            switch (portIndex) {
-            case 0:
-                return ExecPin().type();
-            case 1:
-                return QubitPin().type();
-            }
-            break;
-
-        case QtNodes::PortType::Out:
-            switch (portIndex) {
-            case 0:
-                return ExecPin().type();
-            case 1:
-                return QubitPin().type();
-            }
-            break;
-
-        case QtNodes::PortType::None:
-            break;
-        }
-        // FIXME: control may reach end of non-void function [-Wreturn-type]
-        return QtNodes::NodeDataType();
-    }
-
-    std::shared_ptr<QtNodes::NodeData> outData(QtNodes::PortIndex const port) override
-    {
-        return std::make_shared<QubitPin>();
-    }
-
-    void setInData(std::shared_ptr<QtNodes::NodeData>, QtNodes::PortIndex const) override
-    {
-        //
-    }
-
-    QWidget* embeddedWidget() override { return nullptr; }
 };
